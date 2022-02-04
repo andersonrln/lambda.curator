@@ -1,0 +1,23 @@
+actions:
+  1:
+    action: snapshot
+    description: >-
+      Make backups of indices older then 30 days.
+    options:
+      repository: snapshots-logseasynvest
+      name: servers-%Y.%m.%d
+      ignore_unavailable: False
+      include_global_state: True
+      partial: False
+      wait_for_completion: True
+      skip_repo_fs_check: False
+      timeout_override:
+      continue_if_exception: False
+      disable_action: False
+    filters:
+    - filtertype: age
+      source: creation_date
+      direction: older
+      unit: days
+      unit_count: 30
+      exclude:

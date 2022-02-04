@@ -1,0 +1,17 @@
+---
+# Leave a key empty if there is no value. None will be a string.
+
+client:
+  hosts: vpc-logs-easynvest-s5rrbocnmi7pidjbpenenv5jza.sa-east-1.es.amazonaws.com
+  port: 443
+  use_ssl: True
+  aws_region: sa-east-1
+  ssl_no_validate: False
+  aws_sign_request: True
+  timeout: 60
+
+logging:
+  loglevel: INFO
+  logfile:
+  logformat: default
+  blacklist: ['elasticsearch', 'urllib3']
